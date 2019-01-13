@@ -1,5 +1,6 @@
 package com.project.solomode.testapp.retrokotlinmvp.PresenterImpl
 
+import com.project.solomode.testapp.retrokotlinmvp.Model.Instansi
 import com.project.solomode.testapp.retrokotlinmvp.Network.ApiClient
 import com.project.solomode.testapp.retrokotlinmvp.Network.ApiInterface
 import com.project.solomode.testapp.retrokotlinmvp.Presenter.MainActivityPresenter
@@ -38,5 +39,12 @@ class MainActivityPresenterImpl(var mainView: MainActivityPresenter.MainView?) :
 
     override fun onStop() {
         compositeDisposable.dispose()
+    }
+
+    fun checkDataTrue(instansi: Instansi): Boolean {
+        if(instansi.instansi=="harapan jaya" && instansi.alamat=="jonggol") {
+            return true
+        }
+        return false
     }
 }
