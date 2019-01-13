@@ -50,4 +50,9 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.MainView {
     override fun onFailedFetchData() {
         Toast.makeText(this, "Gagal mendapatkan data", Toast.LENGTH_SHORT).show()
     }
+
+    override fun onDestroy() {
+        mainActivityPresenterImpl!!.onStop()
+        super.onDestroy()
+    }
 }

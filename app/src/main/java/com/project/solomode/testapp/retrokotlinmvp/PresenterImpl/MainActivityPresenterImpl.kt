@@ -37,6 +37,6 @@ class MainActivityPresenterImpl(var mainView: MainActivityPresenter.MainView?) :
     }
 
     override fun onStop() {
-
+        compositeDisposable.dispose()
     }
 }
